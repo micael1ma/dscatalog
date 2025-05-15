@@ -1,13 +1,12 @@
 package com.micael1ma.dscatalog.resources;
 
-import com.micael1ma.dscatalog.entities.Category;
+import com.micael1ma.dscatalog.dto.CategoryDTO;
 import com.micael1ma.dscatalog.services.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 
 import java.util.List;
 
@@ -19,8 +18,8 @@ public class CategoryResource {
     private CategoryService categoryService;
 
     @GetMapping
-    public ResponseEntity<List<Category>> findAll(){
-        List<Category> list = categoryService.findAll();
+    public ResponseEntity<List<CategoryDTO>> findAll() {
+        List<CategoryDTO> list = categoryService.findAll();
         return ResponseEntity.ok().body(list);
     }
 }
